@@ -1,5 +1,5 @@
 {
-  "name": "@skybohra/common-services",
+  "name": "@sky_bohra/common-services",
   "version": "0.0.2",
   "description": "Reusable common services library for NestJS microservices",
   "author": "Sateesh Kumar Yadav",
