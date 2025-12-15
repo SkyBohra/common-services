@@ -1,0 +1,33 @@
+touch .npmignore
+```
+```
+# Source files
+src/
+test/
+*.spec.ts
+
+# Config files
+.eslintrc.js
+.prettierrc
+jest.config.js
+tsconfig.build.json
+
+# Development
+node_modules/
+coverage/
+*.log
+.env
+.env.test
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# CI/CD
+.github/
