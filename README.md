@@ -1,98 +1,133 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <a href="https://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<h1 align="center">Common Services Library</h1>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+<p align="center">
+  Reusable common services library for NestJS microservices with encryption, logging, response handling, and exception management.
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+<p align="center">
+  <a href="https://www.npmjs.com/package/@skybohra/common-services" target="_blank"><img src="https://img.shields.io/npm/v/@skybohra/common-services.svg" alt="NPM Version" /></a>
+  <a href="https://www.npmjs.com/package/@skybohra/common-services" target="_blank"><img src="https://img.shields.io/npm/l/@skybohra/common-services.svg" alt="Package License" /></a>
+  <a href="https://github.com/SkyBohra/common-services" target="_blank"><img src="https://img.shields.io/badge/github-SkyBohra%2Fcommon--services-blue" alt="GitHub" /></a>
+</p>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 📋 Overview
 
-## Project setup
+A comprehensive NestJS library providing production-ready services for:
 
-```bash
-$ npm install
-```
+- 🔐 **Encryption/Decryption** - Secure data encryption with configurable keys
+- 📝 **Logging** - Structured logging with Winston integration
+- 📤 **Response Handling** - Standardized API response format
+- ⚠️ **Exception Management** - Global exception filtering and custom exceptions
+- 🎯 **Decorators** - Useful decorators for common operations
 
-## Compile and run the project
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Run tests
+## 🚀 Installation
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm install @skybohra/common-services
 ```
 
-## Deployment
+## 📖 Documentation
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+For detailed usage instructions, API references, and examples, please refer to the [Wiki](https://github.com/SkyBohra/common-services/wiki).
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+## 🔧 Configuration
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+Common Services Library can be easily configured to suit your application's needs. Here's a basic example:
+
+```typescript
+import { Module } from '@nestjs/common';
+import { CommonServicesModule } from '@skybohra/common-services';
+
+@Module({
+  imports: [
+    CommonServicesModule.forRoot({
+      encryptionKey: 'your-encryption-key',
+      logLevel: 'debug',
+    }),
+  ],
+})
+export class AppModule {}
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## 🎉 Features
 
-## Resources
+- **EncryptionService**: Encrypt and decrypt data using AES-256-CBC.
+- **LoggingService**: Log messages with different severity levels (debug, info, warn, error).
+- **ResponseService**: Send standardized JSON responses with success and error formats.
+- **ExceptionFilter**: Global exception filter to catch and handle exceptions.
+- **Custom Decorators**: `@Encrypt()`, `@Log()`, `@Response()`, and `@Exception()` decorators for easy usage.
 
-Check out a few resources that may come in handy when working with NestJS:
+## 🚦 Usage
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+Here's a quick example demonstrating the usage of some features:
 
-## Support
+```typescript
+import { Controller, Get, UseFilters } from '@nestjs/common';
+import { AppService } from './app.service';
+import { ResponseService, LoggingService, ExceptionFilter } from '@skybohra/common-services';
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+@Controller()
+@UseFilters(ExceptionFilter)
+export class AppController {
+  constructor(
+    private readonly appService: AppService,
+    private readonly responseService: ResponseService,
+    private readonly loggingService: LoggingService,
+  ) {}
 
-## Stay in touch
+  @Get()
+  getHello(): string {
+    this.loggingService.log('Fetching hello world message');
+    return this.responseService.success({ message: this.appService.getHello() });
+  }
+}
+```
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## 🧪 Testing
 
-## License
+Common Services Library comes with built-in support for testing. Here's an example of a unit test for the `EncryptionService`:
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+```typescript
+import { Test, TestingModule } from '@nestjs/testing';
+import { EncryptionService } from './encryption.service';
+
+describe('EncryptionService', () => {
+  let service: EncryptionService;
+
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      providers: [EncryptionService],
+    }).compile();
+
+    service = module.get<EncryptionService>(EncryptionService);
+  });
+
+  it('should encrypt and decrypt data', () => {
+    const data = 'Hello World';
+    const encryptedData = service.encrypt(data);
+    const decryptedData = service.decrypt(encryptedData);
+
+    expect(decryptedData).toEqual(data);
+  });
+});
+```
+
+## 🤝 Contributing
+
+We welcome contributions to Common Services Library! Please read our [Contributing Guide](https://github.com/SkyBohra/common-services/blob/main/CONTRIBUTING.md) for details on how to contribute.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/SkyBohra/common-services/blob/main/LICENSE) file for details.
+
+## 📞 Support
+
+For support, please open an issue on the [GitHub repository](https://github.com/SkyBohra/common-services/issues) or contact the maintainer.
+
+---
+
+This README was generated with ❤️ by [NestJS CLI](https://docs.nestjs.com/cli/overview)
