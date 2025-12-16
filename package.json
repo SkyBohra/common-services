@@ -95,6 +95,7 @@
       "^src/(.*)$": "<rootDir>/src/$1"
     }
   },
+  "main": "dist/index.js",
   "files": [
     "dist",
     "README.md",
